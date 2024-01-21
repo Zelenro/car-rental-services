@@ -32,7 +32,9 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <ErrorBoundary>
+
         <App />
+
       </ErrorBoundary>
     </React.StrictMode>
   </Provider>,
