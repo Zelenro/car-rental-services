@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/car-rental-services/static/css/main.b5320759.css",
+    "main.js": "/car-rental-services/static/js/main.3c6f9a67.js",
+    "static/media/errorcar.jpg": "/car-rental-services/static/media/errorcar.c18c27c712d4d906aa40.jpg",
+    "index.html": "/car-rental-services/index.html",
+    "main.b5320759.css.map": "/car-rental-services/static/css/main.b5320759.css.map",
+    "main.3c6f9a67.js.map": "/car-rental-services/static/js/main.3c6f9a67.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5320759.css",
+    "static/js/main.3c6f9a67.js"
+  ]
+}
