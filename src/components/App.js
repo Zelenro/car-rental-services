@@ -1,39 +1,34 @@
 import React from 'react';
-import { GlobalStyle } from 'GlobalStyle';
-import { Layout } from 'Layout';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchAllCars } from 'redux/operations';
-import CarList from './CarList/CarList';
-import { Filter } from './Filter/Filter';
-import { selectError, selectIsLoading } from 'redux/selectors';
-export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Catalog from './Catalog/Catalog';
+import Favorites from './Favorites/Favorites';
+import Home from './Home/Home';
+import { Li, List, Wrapper } from './App.styled';
 
-  useEffect(() => {
-    dispatch(fetchAllCars());
-  }, [dispatch]);
-
+const App = () => {
   return (
-    <Layout>
-      <h1>Car Rent</h1>
-      <Filter />
-
-      {isLoading && !error && (
-        <p
-          style={{
-            textAlign: 'center',
-            fontWeight: 'bold',
-          }}
-        >
-          Loading...
-        </p>
-      )}
-
-      <CarList />
-      <GlobalStyle />
-    </Layout>
+    <>
+      <nav>
+        <List>
+          <Li>
+            <NavLink to="/" activeClassName="active">Home</NavLink>
+          </Li>
+          <Li>
+            <NavLink to="/catalog" activeClassName="active">Catalog</NavLink>
+          </Li>
+          <Li>
+            <NavLink to="/favorites" activeClassName="active">Favorites</NavLink>
+          </Li>
+        </List>
+      </nav>
+      <Wrapper>
+        <Routes>
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/" element={<Home />} />
+        </Routes></Wrapper>
+    </>
   );
-};
+}
+
+export default App;

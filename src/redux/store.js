@@ -2,6 +2,7 @@ import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { carsReducer } from './carsSlice';
 import { filterReducer } from './filterSlice';
 
+
 const middleware = [...getDefaultMiddleware(), (store) => (next) => (action) => {
   console.log('Action:', action);
   console.log('State before:', store.getState());
@@ -16,3 +17,5 @@ export const store = configureStore({
   },
   middleware,
 });
+
+

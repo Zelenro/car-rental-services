@@ -25,4 +25,8 @@ button {
   border: 2px solid #bf4f74;
   border-radius: 2px;
  }
+
+ ul {
+  list-styly: none;
+ }
 `;
